@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>L&amp;L Nails - Sugar Grove | Modern Nail Studio on Route 47</title>
+<meta name="description" content="L&amp;L Nails in Sugar Grove. Gel, acrylic, dip, nail art, and a relaxed pedi chair worth the drive. Open Tuesday through Sunday." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0E0B0F;
+  --surface: #161219;
+  --surface-soft: #1F1A22;
+  --primary: #F4EDE5;
+  --primary-deep: #E8DED1;
+  --accent: #D89B8E;
+  --accent-hover: #BC7F6F;
+  --magenta: #C45184;
+  --magenta-hover: #A03868;
+  --rose-gold: #C7967B;
+  --pearl: #F1E7DC;
+  --text: #E0D8CB;
+  --muted: #8A7E7E;
+  --border: rgba(244,237,229,0.10);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.30);
+  --shadow-md: 0 14px 38px rgba(0,0,0,0.45);
+  --shadow-lg: 0 30px 75px rgba(0,0,0,0.55);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-weight: 300; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+h1, h2, h3, h4 { font-family: 'Italiana', serif; font-weight: 400; line-height: 1.1; color: var(--primary); letter-spacing: 0.01em; }
+.container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 24px 0; transition: all .35s ease; }
+header.scrolled { padding: 14px 0; background: rgba(14,11,15,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.logo-wordmark { font-family: 'Italiana', serif; font-size: 1.8rem; color: var(--primary); text-decoration: none; letter-spacing: 0.05em; }
+.logo-wordmark .amp { color: var(--magenta); font-style: italic; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: var(--text); text-decoration: none; font-weight: 400; font-size: 0.84rem; letter-spacing: 0.18em; text-transform: uppercase; transition: color .2s ease; }
+.nav-links a:hover { color: var(--magenta); }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 30px; border: none; border-radius: 50px; font-family: 'Jost', sans-serif; font-weight: 500; font-size: 0.84rem; text-decoration: none; cursor: pointer; transition: all .25s ease; letter-spacing: 0.20em; text-transform: uppercase; }
+.btn-primary { background: var(--magenta); color: var(--primary); box-shadow: 0 10px 30px rgba(196,81,132,0.35); animation: pulse 2.6s ease-in-out infinite; }
+.btn-primary:hover { background: var(--magenta-hover); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--primary); border: 1px solid var(--primary); }
+.btn-outline:hover { background: var(--primary); color: var(--bg); }
+@keyframes pulse { 0%,100% { box-shadow: 0 10px 30px rgba(196,81,132,0.35); } 50% { box-shadow: 0 10px 30px rgba(196,81,132,0.55), 0 0 0 8px rgba(196,81,132,0); } }
+
+.hero { min-height: 100vh; padding: 150px 0 80px; display: flex; align-items: center; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(70% 60% at 80% 30%, rgba(196,81,132,0.20) 0%, transparent 60%), radial-gradient(50% 50% at 10% 80%, rgba(199,150,123,0.18) 0%, transparent 65%); }
+.hero::after { content: ''; position: absolute; inset: 0; opacity: 0.04; background-image: radial-gradient(var(--primary) 1px, transparent 1px); background-size: 32px 32px; pointer-events: none; }
+.hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; position: relative; z-index: 1; }
+.eyebrow { display: inline-flex; align-items: center; gap: 14px; font-size: 0.74rem; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; color: var(--magenta); margin-bottom: 28px; }
+.eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--magenta); }
+.hero h1 { font-size: clamp(3.4rem, 7vw, 6rem); margin-bottom: 30px; }
+.hero h1 .accent-word { color: var(--rose-gold); font-style: italic; }
+.hero-sub { font-size: 1.16rem; color: var(--text); margin-bottom: 40px; max-width: 520px; line-height: 1.7; font-weight: 300; opacity: 0.85; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+.hero-meta { margin-top: 44px; display: flex; gap: 40px; flex-wrap: wrap; padding-top: 32px; border-top: 1px solid var(--border); }
+.meta-item { font-size: 0.84rem; color: var(--muted); letter-spacing: 0.10em; text-transform: uppercase; }
+.meta-item strong { font-family: 'Italiana', serif; color: var(--primary); display: block; font-size: 1.6rem; margin-bottom: 4px; letter-spacing: normal; text-transform: none; }
+
+.hero-art { position: relative; aspect-ratio: 3/4; max-height: 580px; }
+.hero-art-img { width: 100%; height: 100%; border-radius: 50% 50% 4px 4px / 30% 30% 4px 4px; overflow: hidden; box-shadow: var(--shadow-lg); }
+<!-- REPLACE WITH REAL PHOTO of L&L Nails finished sets -->
+.hero-art-img img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.92) contrast(1.10); }
+.hero-art-deco { position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: var(--magenta); border-radius: 50%; opacity: 0.20; filter: blur(40px); animation: drift 8s ease-in-out infinite; }
+@keyframes drift { 0%,100% { transform: translate(0,0); } 50% { transform: translate(20px,-20px); } }
+
+section { padding: clamp(80px, 10vw, 130px) 0; position: relative; }
+.section-head { text-align: center; margin-bottom: 64px; max-width: 700px; margin-left: auto; margin-right: auto; }
+.section-head .eyebrow { justify-content: center; }
+.section-head .eyebrow::before { content: '/'; width: auto; background: none; color: var(--magenta); font-family: 'Italiana', serif; }
+.section-head h2 { font-size: clamp(2.4rem, 4.6vw, 3.8rem); margin-bottom: 18px; }
+.section-head p { color: var(--muted); font-size: 1.06rem; }
+
+/* services */
+.services { background: var(--surface); }
+.services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.service-card { padding: 28px 30px; background: var(--surface-soft); border-radius: 6px; border-left: 2px solid var(--magenta); transition: all .3s ease; }
+.service-card:hover { transform: translateX(6px); background: var(--bg); border-left-color: var(--rose-gold); }
+.service-flex { display: flex; justify-content: space-between; gap: 18px; align-items: baseline; margin-bottom: 6px; }
+.service-name { font-family: 'Italiana', serif; font-size: 1.45rem; color: var(--primary); letter-spacing: 0.02em; }
+.service-price { font-family: 'Italiana', serif; font-size: 1.55rem; color: var(--magenta); white-space: nowrap; }
+.service-desc { font-size: 0.92rem; color: var(--muted); font-style: italic; }
+.menu-note { text-align: center; margin-top: 30px; font-size: 0.82rem; color: var(--muted); font-style: italic; }
+
+/* about */
+.about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; }
+.about h2 { font-size: clamp(2.2rem, 3.8vw, 3rem); margin-bottom: 26px; }
+.about p { font-size: 1.04rem; color: var(--text); margin-bottom: 18px; line-height: 1.85; opacity: 0.85; }
+.about-image { aspect-ratio: 4/5; border-radius: 4px; overflow: hidden; box-shadow: var(--shadow-md); position: relative; }
+<!-- REPLACE WITH REAL PHOTO of L&L Nails interior or station -->
+.about-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.94) contrast(1.06); }
+.about-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, transparent 40%, rgba(196,81,132,0.20) 100%); }
+
+/* gallery */
+.gallery { background: var(--surface); position: relative; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 280px; gap: 16px; }
+.gallery-item { border-radius: 4px; overflow: hidden; box-shadow: var(--shadow-md); position: relative; }
+.gallery-item:nth-child(1) { grid-row: span 2; }
+.gallery-item:nth-child(4) { grid-column: span 2; }
+<!-- REPLACE WITH REAL PHOTOS of L&L Nails recent work -->
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease; filter: brightness(0.95) contrast(1.06); }
+.gallery-item:hover img { transform: scale(1.06); }
+
+/* reviews */
+.reviews-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
+.review-feature { background: linear-gradient(135deg, var(--surface-soft) 0%, var(--surface) 100%); padding: 50px; border-radius: 8px; border: 1px solid var(--border); }
+.review-feature .review-stars { font-size: 1.4rem; }
+.review-feature .review-text { font-family: 'Italiana', serif; font-size: 1.7rem; line-height: 1.4; color: var(--primary); margin: 20px 0 24px; }
+.review-stack { display: flex; flex-direction: column; gap: 16px; }
+.review-mini { background: var(--surface-soft); padding: 24px; border-radius: 6px; border-left: 2px solid var(--rose-gold); }
+.review-mini .review-stars { letter-spacing: 2px; color: var(--rose-gold); font-size: 0.95rem; margin-bottom: 8px; }
+.review-mini p { font-size: 0.96rem; color: var(--text); margin-bottom: 10px; line-height: 1.6; }
+.review-name { font-size: 0.74rem; letter-spacing: 0.20em; text-transform: uppercase; color: var(--magenta); font-weight: 500; }
+
+/* cta band */
+.cta-band { text-align: center; background: linear-gradient(135deg, var(--magenta) 0%, var(--accent-hover) 100%); position: relative; overflow: hidden; }
+.cta-band::before { content: ''; position: absolute; inset: 0; opacity: 0.10; background: radial-gradient(circle at 30% 50%, var(--pearl) 0%, transparent 50%); }
+.cta-band h2 { color: var(--primary); font-size: clamp(2.4rem, 4.4vw, 3.4rem); margin-bottom: 18px; }
+.cta-band p { color: rgba(244,237,229,0.85); margin-bottom: 36px; font-size: 1.1rem; }
+.cta-band .btn-primary { background: var(--bg); color: var(--primary); animation: none; }
+.cta-band .btn-primary:hover { background: var(--surface); }
+
+/* contact */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: stretch; }
+.contact-info { padding: 40px; background: var(--surface); border-radius: 8px; border: 1px solid var(--border); }
+.contact-row { display: flex; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+.contact-row:last-child { border-bottom: none; }
+.contact-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--rose-gold); min-width: 90px; padding-top: 4px; }
+.contact-value { color: var(--text); font-weight: 400; }
+.contact-value a { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--magenta); transition: all .2s ease; }
+.contact-value a:hover { color: var(--magenta); }
+.hours-list { display: flex; flex-direction: column; gap: 6px; font-size: 0.94rem; }
+.hours-list div { display: flex; justify-content: space-between; padding: 3px 0; }
+.hours-list .day { color: var(--muted); }
+.social-row { display: flex; gap: 10px; }
+.social-row a { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--border); border-radius: 50%; color: var(--text); text-decoration: none; transition: all .25s ease; }
+.social-row a:hover { background: var(--magenta); border-color: var(--magenta); transform: translateY(-2px); color: var(--primary); }
+.map-wrap { border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md); min-height: 460px; border: 1px solid var(--border); }
+.map-wrap iframe { width: 100%; height: 100%; border: 0; min-height: 460px; filter: invert(0.9) hue-rotate(180deg); }
+
+footer { background: #050306; color: rgba(244,237,229,0.65); padding: 70px 0 30px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 50px; }
+.footer-col h4 { font-family: 'Jost', sans-serif; color: var(--primary); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; margin-bottom: 18px; }
+.footer-col p { font-size: 0.94rem; line-height: 1.7; margin-bottom: 8px; }
+.footer-col a { color: rgba(244,237,229,0.65); text-decoration: none; font-size: 0.94rem; display: block; padding: 4px 0; }
+.footer-col a:hover { color: var(--magenta); }
+.footer-brand { font-family: 'Italiana', serif; font-size: 1.7rem; color: var(--primary); margin-bottom: 18px; letter-spacing: 0.04em; }
+.footer-brand .amp { color: var(--magenta); font-style: italic; }
+.footer-social { display: flex; gap: 10px; margin-top: 18px; }
+.footer-social a { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(244,237,229,0.14); border-radius: 50%; color: rgba(244,237,229,0.65); }
+.footer-social a:hover { background: var(--magenta); border-color: var(--magenta); color: var(--primary); }
+.footer-bottom { border-top: 1px solid rgba(244,237,229,0.10); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.84rem; }
+
+.mobile-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--surface); padding: 14px 16px; border-top: 1px solid var(--border); box-shadow: 0 -4px 18px rgba(0,0,0,0.40); z-index: 99; }
+.mobile-cta .btn { width: 100%; justify-content: center; }
+.reveal { opacity: 0; transform: translateY(28px); transition: all 0.8s cubic-bezier(0.16,1,0.3,1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 980px) {
+  .hero-grid, .about-grid, .reviews-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 220px; }
+  .gallery-item:nth-child(1), .gallery-item:nth-child(4) { grid-row: auto; grid-column: auto; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .hero-art { aspect-ratio: 4/3; max-height: 420px; }
+}
+@media (max-width: 640px) {
+  .nav-links a:not(.btn) { display: none; }
+  .mobile-cta { display: block; }
+  body { padding-bottom: 76px; }
+  .hero { padding-top: 110px; min-height: auto; }
+  .hero h1 { font-size: 3rem; }
+  .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 200px; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="container nav-inner">
+    <a href="#top" class="logo-wordmark">L<span class="amp">&amp;</span>L Nails</a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="https://www.fresha.com/lvp/l-l-nails-illinois-47-sugar-grove-k9k4zg" target="_blank" rel="noopener" class="btn btn-primary">Book Now</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <span class="eyebrow">Sugar Grove, IL</span>
+      <h1>Quiet music. <span class="accent-word">Steady</span> hands. Flawless finish.</h1>
+      <p class="hero-sub">A modern nail studio with a five-figure regular client list and a four-week waitlist for the elaborate art sets. Mani, pedi, dip, gel, acrylic - book online and your chair is waiting.</p>
+      <div class="hero-ctas">
+        <a href="https://www.fresha.com/lvp/l-l-nails-illinois-47-sugar-grove-k9k4zg" target="_blank" rel="noopener" class="btn btn-primary">Book on Fresha</a>
+        <a href="tel:8152956819" class="btn btn-outline">Call (815) 295-6819</a>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-item"><strong>4.7&#9733;</strong>476 reviews</div>
+        <div class="meta-item"><strong>6 days</strong>open Tue - Sun</div>
+        <div class="meta-item"><strong>Online</strong>booking via Fresha</div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-art-img">
+        <!-- REPLACE WITH REAL PHOTO of L&L Nails finished work -->
+        <img src="https://images.unsplash.com/photo-1604902396830-aca29e19b067?w=900&q=80" alt="Detailed gel manicure with rose-gold accents" />
+      </div>
+      <div class="hero-art-deco"></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">The menu</span>
+      <h2>Services & pricing</h2>
+      <p>Prices below are starting points. Length, art, and embellishments priced in chair.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-flex"><span class="service-name">Mani Classique</span><span class="service-price">$24 &#10033;</span></div>
+        <span class="service-desc">Shape, cuticle, polish. The clean start.</span>
+      </div>
+      <div class="service-card">
+        <div class="service-flex"><span class="service-name">Gel Manicure</span><span class="service-price">$38 &#10033;</span></div>
+        <span class="service-desc">2-3 week wear. Cure under LED.</span>
+      </div>
+      <div class="service-card">
+        <div class="service-flex"><span class="service-name">Pedi Indulgence</span><span class="service-price">$40 &#10033;</span></div>
+        <span class="service-desc">Soak, scrub, massage, polish.</span>
+      </div>
+      <div class="service-card">
+        <div class="service-flex"><span class="service-name">Gel Pedicure</span><span class="service-price">$50 &#10033;</span></div>
+        <span class="service-desc">Long-wear gel on toes. Sandal-ready.</span>
+      </div>
+      <div class="service-card">
+        <div class="service-flex"><span class="service-name">Acrylic Full Set</span><span class="service-price">$50 &#10033;</span></div>
+        <span class="service-desc">Length and shape your call. Plain polish.</span>
+      </div>
+      <div class="service-card">
+        <div class="service-flex"><span class="service-name">Acrylic Fill</span><span class="service-price">$32 &#10033;</span></div>
+        <span class="service-desc">Refresh every 2-3 weeks.</span>
+      </div>
+      <div class="service-card">
+        <div class="service-flex"><span class="service-name">Dip Powder Set</span><span class="service-price">$42 &#10033;</span></div>
+        <span class="service-desc">Lightweight, durable, gel alternative.</span>
+      </div>
+      <div class="service-card">
+        <div class="service-flex"><span class="service-name">Gel Nail Extensions</span><span class="service-price">$58 &#10033;</span></div>
+        <span class="service-desc">Soft gel tips with overlay.</span>
+      </div>
+      <div class="service-card">
+        <div class="service-flex"><span class="service-name">Nail Art (per nail)</span><span class="service-price">$4+ &#10033;</span></div>
+        <span class="service-desc">Hand-painted, foiled, or 3D detail.</span>
+      </div>
+      <div class="service-card">
+        <div class="service-flex"><span class="service-name">Fish Pedicure</span><span class="service-price">$58 &#10033;</span></div>
+        <span class="service-desc">Specialty exfoliating soak.</span>
+      </div>
+    </div>
+    <p class="menu-note">&#10033; Prices shown are placeholders - confirm with owner before launch.</p>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-image">
+      <!-- REPLACE WITH REAL PHOTO of L&L Nails studio interior -->
+      <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=900&q=80" alt="Modern nail studio with warm lighting" />
+    </div>
+    <div>
+      <span class="eyebrow">About L&amp;L</span>
+      <h2>A small studio doing big work.</h2>
+      <p>Five chairs, dedicated stations, and a sanitization protocol we wrote out and posted on the wall so clients never have to ask. We take time on every set because shortcuts show up in two weeks.</p>
+      <p>Our regulars are Sugar Grove locals, Aurora commuters, and the occasional Yorkville drive-in. The booking calendar runs ahead by a few weeks for the senior techs - book early for special occasions.</p>
+      <p>Walk-ins welcome when chairs open up; Fresha is the fastest way to know who's free right now.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Portfolio</span>
+      <h2>Recent sets</h2>
+      <p>From quiet neutrals to elaborate art - a rolling sample of work that left the studio recently.</p>
+    </div>
+    <div class="gallery-grid">
+      <!-- REPLACE WITH REAL PHOTOS of L&L Nails finished work -->
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1604654894611-6973b376cbde?w=700&q=80" alt="Glossy nude almond manicure" /></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1607779097040-f06f6f56ad4d?w=600&q=80" alt="French tip with gold accents" /></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=600&q=80" alt="Detailed acrylic set" /></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1599948128020-9a44505b58d4?w=900&q=80" alt="Neutral pedicure" /></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80" alt="Pearl finish dip powder" /></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">The reviews</span>
+      <h2>The 4.7&#9733; story</h2>
+      <p>Themes pulled from real reviews on Yelp, Fresha, and Birdeye.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-feature">
+        <div class="review-stars" style="color:var(--rose-gold);letter-spacing:3px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"They booked me online, ran exactly on time, and the gel set is still perfect three weeks later. Found my new place."</p>
+        <div class="review-name">- Anna K.</div>
+      </div>
+      <div class="review-stack">
+        <div class="review-mini">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Clean, quiet, and the techs actually listen to what shape you want."</p>
+          <div class="review-name">Lauren B.</div>
+        </div>
+        <div class="review-mini">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"My go-to for elaborate art. Worth the drive from Aurora."</p>
+          <div class="review-name">Jess H.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Book your next set</h2>
+    <p>Fresha shows real-time availability and lets you pick your tech.</p>
+    <a href="https://www.fresha.com/lvp/l-l-nails-illinois-47-sugar-grove-k9k4zg" target="_blank" rel="noopener" class="btn btn-primary">Book on Fresha</a>
+  </div>
+</section>
+
+<section class="contact" id="visit">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Find us</span>
+      <h2>Visit the studio</h2>
+      <p>495 IL Route 47, just south of the Walgreens. Parking right out front.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-row"><span class="contact-label">Address</span><span class="contact-value"><a href="https://maps.apple.com/?q=495+IL-47+Unit+5+Sugar+Grove+IL+60554">495 IL-47, Unit 5<br/>Sugar Grove, IL 60554</a></span></div>
+        <div class="contact-row"><span class="contact-label">Phone</span><span class="contact-value"><a href="tel:8152956819">(815) 295-6819</a></span></div>
+        <div class="contact-row"><span class="contact-label">Booking</span><span class="contact-value"><a href="https://www.fresha.com/lvp/l-l-nails-illinois-47-sugar-grove-k9k4zg" target="_blank" rel="noopener">Fresha online booking</a></span></div>
+        <div class="contact-row"><span class="contact-label">Hours</span>
+          <span class="contact-value">
+            <div class="hours-list">
+              <div><span class="day">Monday</span><span>Closed</span></div>
+              <div><span class="day">Tue - Fri</span><span>9:30am - 8pm</span></div>
+              <div><span class="day">Saturday</span><span>9am - 6pm</span></div>
+              <div><span class="day">Sunday</span><span>10am - 4pm</span></div>
+            </div>
+          </span>
+        </div>
+        <div class="contact-row"><span class="contact-label">Reviews</span>
+          <span class="contact-value">
+            <div class="social-row">
+              <a href="https://www.yelp.com/biz/l-and-l-nails-sugar-grove" target="_blank" rel="noopener" aria-label="Yelp"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.16 12.594l-1.49-.5c-1.19-.4-1.19-1.508 0-1.908l1.49-.5c.83-.28 1.273-1.123.99-1.953l-.51-1.49c-.282-.83-1.124-1.273-1.953-.99l-1.49.5c-1.19.4-2.18-.51-1.95-1.732l.32-1.55c.18-.85-.39-1.69-1.24-1.87l-1.56-.32c-.85-.18-1.69.39-1.87 1.24l-.32 1.56c-.23 1.22-1.4 1.55-2.27.67l-1.1-1.1c-.61-.61-1.6-.61-2.21 0l-1.11 1.1c-.61.61-.61 1.6 0 2.21l1.1 1.1c.88.87.55 2.04-.67 2.27l-1.56.32c-.85-.18-1.42 1.02-1.24 1.87l.32 1.56c.18.85 1.02 1.42 1.87 1.24l1.55-.32c1.22-.23 2.13.76 1.73 1.95l-.5 1.49c-.28.83.16 1.67.99 1.95l1.49.51c.83.28 1.67-.16 1.95-.99l.5-1.49c.4-1.19 1.51-1.19 1.91 0l.5 1.49c.28.83 1.12 1.27 1.95.99l1.49-.51c.83-.28 1.27-1.12.99-1.95z"/></svg></a>
+            </div>
+          </span>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps?q=495+IL-47+Unit+5+Sugar+Grove+IL+60554&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">L<span class="amp">&amp;</span>L Nails</div>
+        <p>Modern nail studio on Route 47 in Sugar Grove. Booking on Fresha, walk-ins when we can.</p>
+        <div class="footer-social">
+          <a href="https://www.yelp.com/biz/l-and-l-nails-sugar-grove" target="_blank" rel="noopener" aria-label="Yelp"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.16 12.594l-1.49-.5c-1.19-.4-1.19-1.508 0-1.908l1.49-.5c.83-.28 1.273-1.123.99-1.953l-.51-1.49c-.282-.83-1.124-1.273-1.953-.99l-1.49.5c-1.19.4-2.18-.51-1.95-1.732l.32-1.55c.18-.85-.39-1.69-1.24-1.87l-1.56-.32c-.85-.18-1.69.39-1.87 1.24l-.32 1.56c-.23 1.22-1.4 1.55-2.27.67l-1.1-1.1c-.61-.61-1.6-.61-2.21 0l-1.11 1.1c-.61.61-.61 1.6 0 2.21l1.1 1.1c.88.87.55 2.04-.67 2.27l-1.56.32c-.85-.18-1.42 1.02-1.24 1.87l.32 1.56c.18.85 1.02 1.42 1.87 1.24l1.55-.32c1.22-.23 2.13.76 1.73 1.95l-.5 1.49c-.28.83.16 1.67.99 1.95l1.49.51c.83.28 1.67-.16 1.95-.99l.5-1.49c.4-1.19 1.51-1.19 1.91 0l.5 1.49c.28.83 1.12 1.27 1.95.99l1.49-.51c.83-.28 1.27-1.12.99-1.95z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <p>495 IL-47, Unit 5<br/>Sugar Grove, IL 60554</p>
+        <p><a href="tel:8152956819">(815) 295-6819</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p>Mon &nbsp;&nbsp;&nbsp;&nbsp; Closed</p>
+        <p>Tue - Fri &nbsp; 9:30am - 8pm</p>
+        <p>Sat &nbsp;&nbsp;&nbsp;&nbsp; 9am - 6pm</p>
+        <p>Sun &nbsp;&nbsp;&nbsp;&nbsp; 10am - 4pm</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick links</h4>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="https://www.fresha.com/lvp/l-l-nails-illinois-47-sugar-grove-k9k4zg" target="_blank" rel="noopener">Book on Fresha</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 L&amp;L Nails. All rights reserved.</span>
+      <span>Website by <a href="https://johnathon-builds.vercel.app" style="color:var(--magenta)">Johnathon Builds</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <a href="https://www.fresha.com/lvp/l-l-nails-illinois-47-sugar-grove-k9k4zg" target="_blank" rel="noopener" class="btn btn-primary">Book on Fresha</a>
+</div>
+
+<script>
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => { if (window.scrollY > 80) header.classList.add('scrolled'); else header.classList.remove('scrolled'); });
+const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12 });
+document.querySelectorAll('section').forEach(s => { s.classList.add('reveal'); observer.observe(s); });
+</script>
+
+<!-- ===========================================================================
+     Visual Editor for Johnathon Builds sites. Activates ONLY when the URL
+     contains ?edit=jb2026. Otherwise inert.
+     =========================================================================== -->
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('edit') !== 'jb2026') return;
+  var GH_TOKEN_KEY = 'jb-editor-gh-token-v1';
+  function getStoredToken(){try{return localStorage.getItem(GH_TOKEN_KEY)||''}catch(e){return ''}}
+  function setStoredToken(t){try{localStorage.setItem(GH_TOKEN_KEY,t)}catch(e){}}
+  function clearStoredToken(){try{localStorage.removeItem(GH_TOKEN_KEY)}catch(e){}}
+  var GH_OWNER='JohnathonRizzuto',GH_REPO=location.hostname.split('.')[0].split('-rizzuto')[0],GH_BRANCH='main',GH_FILE='index.html';
+  var style=document.createElement('style');style.textContent='#jb-toolbar{position:fixed;top:0;left:0;right:0;z-index:99999;background:#0a0e1a;color:#e7eaf6;border-bottom:1px solid #2a3358;font-family:sans-serif;font-size:13px;display:flex;align-items:center;gap:8px;padding:8px 16px} #jb-toolbar .jb-brand{font-weight:700;color:#fbbf24;letter-spacing:0.06em;text-transform:uppercase;font-size:11px} #jb-toolbar .jb-spacer{flex:1} #jb-toolbar button{background:transparent;border:1px solid #475569;color:#e7eaf6;padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer} #jb-toolbar button.primary{background:#f59e0b;color:#0a0e1a;border-color:#f59e0b;font-weight:700} #jb-toolbar .jb-status{font-size:11px;color:#94a3b8;min-width:140px;text-align:right} body{padding-top:44px!important} [data-jb-editable]{outline:1px dashed transparent;outline-offset:2px;cursor:text} [data-jb-editable]:hover{outline-color:#3b82f6} [data-jb-editable]:focus{outline:2px solid #3b82f6} img[data-jb-image]{cursor:pointer} img[data-jb-image]:hover{outline:1px dashed #10b981;outline-offset:4px} #jb-modal{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:99998;display:flex;align-items:center;justify-content:center;padding:16px} #jb-modal .jb-modal-card{background:#0f1320;border:1px solid #2a3358;border-radius:12px;padding:20px;max-width:500px;width:100%;color:#e7eaf6} #jb-modal h3{margin:0 0 12px;font-size:16px} #jb-modal p{margin:0 0 12px;font-size:13px;color:#94a3b8} #jb-modal input{width:100%;padding:10px;background:#07090f;border:1px solid #475569;border-radius:6px;color:#e7eaf6;font-size:13px;box-sizing:border-box} #jb-modal .jb-modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:16px} #jb-toast{position:fixed;bottom:20px;right:20px;background:#10b981;color:white;padding:12px 20px;border-radius:8px;font-size:13px;z-index:99997;opacity:0;transition:all 0.2s} #jb-toast.show{opacity:1} #jb-toast.error{background:#ef4444}';
+  document.head.appendChild(style);
+  var toolbar=document.createElement('div');toolbar.id='jb-toolbar';toolbar.innerHTML='<span class="jb-brand">JR EDITOR</span><button id="jb-help">?</button><span class="jb-spacer"></span><span class="jb-status" id="jb-status">click any text or image to edit</span><button id="jb-exit">Exit</button><button id="jb-save" class="primary">Save</button>';document.body.appendChild(toolbar);
+  function status(m){document.getElementById('jb-status').textContent=m}
+  function toast(m,e){var t=document.getElementById('jb-toast');if(!t){t=document.createElement('div');t.id='jb-toast';document.body.appendChild(t)}t.textContent=m;t.className=e?'show error':'show';clearTimeout(t._timer);t._timer=setTimeout(function(){t.className=''},3200)}
+  function makeEditable(){document.querySelectorAll('h1,h2,h3,h4,h5,h6,p,li,a,span,em,strong,td,blockquote').forEach(function(el){if(el.closest('#jb-toolbar, #jb-modal, #jb-toast, script, style'))return;var ht=Array.prototype.some.call(el.childNodes,function(n){return n.nodeType===3&&n.textContent.trim().length>0});if(!ht)return;el.setAttribute('data-jb-editable','');el.setAttribute('contenteditable','true')})}
+  function bindImages(){document.querySelectorAll('img').forEach(function(img){if(img.closest('#jb-toolbar, #jb-modal, #jb-toast'))return;img.setAttribute('data-jb-image','');img.addEventListener('click',function(){promptImageReplace(img)})})}
+  function stripPlaceholderComment(img){var p=img.previousSibling;while(p&&p.nodeType===8){if(/REPLACE WITH REAL PHOTO/i.test(p.textContent)){p.parentNode.removeChild(p);return}p=p.previousSibling}}
+  function promptImageReplace(img){var m=document.createElement('div');m.id='jb-modal';m.innerHTML='<div class="jb-modal-card"><h3>Replace image</h3><p>Paste a direct image URL.</p><input type="url" id="jb-image-url" value="'+(img.src||'').replace(/"/g,'&quot;')+'" /><div class="jb-modal-actions"><button id="jb-image-cancel">Cancel</button><button id="jb-image-ok" class="primary">Replace</button></div></div>';document.body.appendChild(m);var u=document.getElementById('jb-image-url');function close(){try{document.body.removeChild(m)}catch(e){}}document.getElementById('jb-image-cancel').onclick=close;document.getElementById('jb-image-ok').onclick=function(){var url=u.value.trim();if(url){img.src=url;stripPlaceholderComment(img);toast('Image swapped -- press Save.')}close()};u.focus();u.select()}
+  function exitEditMode(){if(!confirm('Exit edit mode?'))return;window.location.href=window.location.pathname+window.location.hash}
+  function serializeForSave(){var c=document.documentElement.cloneNode(true);['jb-toolbar','jb-modal','jb-toast'].forEach(function(id){var el=c.querySelector('#'+id);if(el)el.parentNode.removeChild(el)});c.querySelectorAll('style').forEach(function(s){if(/#jb-toolbar/.test(s.textContent))s.parentNode.removeChild(s)});c.querySelectorAll('[data-jb-editable]').forEach(function(el){el.removeAttribute('data-jb-editable');el.removeAttribute('contenteditable')});c.querySelectorAll('[data-jb-image]').forEach(function(el){el.removeAttribute('data-jb-image')});var b=c.querySelector('body');if(b&&b.style&&b.style.paddingTop==='44px')b.style.paddingTop='';return '<!DOCTYPE html>\n'+c.outerHTML}
+  function gh(t){return{'Accept':'application/vnd.github+json','Authorization':'Bearer '+t,'X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'}}
+  function promptForToken(){return new Promise(function(r){var m=document.createElement('div');m.id='jb-modal';m.innerHTML='<div class="jb-modal-card"><h3>GitHub token</h3><p>Paste your fine-grained PAT.</p><input type="password" id="jb-token-input" /><div class="jb-modal-actions"><button id="jb-token-cancel">Cancel</button><button id="jb-token-ok" class="primary">Save</button></div></div>';document.body.appendChild(m);var i=document.getElementById('jb-token-input');i.focus();function c(v){document.body.removeChild(m);r(v)}document.getElementById('jb-token-cancel').onclick=function(){c('')};document.getElementById('jb-token-ok').onclick=function(){var v=i.value.trim();if(!v){c('');return}setStoredToken(v);c(v)}})}
+  function getToken(){var e=getStoredToken();return e?Promise.resolve(e):promptForToken()}
+  function getSha(t){return fetch('https://api.github.com/repos/'+GH_OWNER+'/'+GH_REPO+'/contents/'+GH_FILE+'?ref='+GH_BRANCH+'&_t='+Date.now(),{headers:gh(t)}).then(function(r){if(!r.ok)throw new Error('GET '+r.status);return r.json()}).then(function(d){return d.sha})}
+  function push(c,s,t){function b64(x){var by=new TextEncoder().encode(x),o='';by.forEach(function(c){o+=String.fromCharCode(c)});return btoa(o)}return fetch('https://api.github.com/repos/'+GH_OWNER+'/'+GH_REPO+'/contents/'+GH_FILE,{method:'PUT',headers:gh(t),body:JSON.stringify({message:'Edit via Visual Editor',content:b64(c),sha:s,branch:GH_BRANCH})}).then(function(r){if(!r.ok)return r.text().then(function(x){throw new Error('PUT '+r.status+': '+x)});return r.json()})}
+  function save(){var btn=document.getElementById('jb-save');btn.disabled=true;btn.textContent='Saving...';return getToken().then(function(t){if(!t){btn.textContent='Save';btn.disabled=false;return}var c=serializeForSave();return getSha(t).then(function(s){return push(c,s,t)}).then(function(){toast('Saved!');btn.textContent='Saved';setTimeout(function(){btn.textContent='Save';btn.disabled=false},4000)}).catch(function(err){if(/401|403/.test(err.message))clearStoredToken();toast('Save failed: '+err.message,true);btn.textContent='Save';btn.disabled=false})})}
+  function showHelp(){var m=document.createElement('div');m.id='jb-modal';m.innerHTML='<div class="jb-modal-card"><h3>Cheatsheet</h3><p>Click any text to edit, any image to swap. Save pushes to GitHub.</p><div class="jb-modal-actions"><button id="jb-help-ok" class="primary">Got it</button></div></div>';document.body.appendChild(m);document.getElementById('jb-help-ok').onclick=function(){document.body.removeChild(m)}}
+  function init(){makeEditable();bindImages();document.getElementById('jb-exit').onclick=exitEditMode;document.getElementById('jb-save').onclick=save;document.getElementById('jb-help').onclick=showHelp}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+
+</body>
+</html>
