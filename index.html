@@ -84,7 +84,7 @@ section { padding: clamp(80px, 10vw, 130px) 0; position: relative; }
 .service-card:hover { transform: translateX(6px); background: var(--bg); border-left-color: var(--rose-gold); }
 .service-flex { display: flex; justify-content: space-between; gap: 18px; align-items: baseline; margin-bottom: 6px; }
 .service-name { font-family: 'Italiana', serif; font-size: 1.45rem; color: var(--primary); letter-spacing: 0.02em; }
-.service-price { font-family: 'Italiana', serif; font-size: 1.55rem; color: var(--magenta); white-space: nowrap; }
+.service-price { font-family: 'Italiana', serif; font-size: 1.55rem; color: var(--magenta); white-space: nowrap; font-variant-numeric: lining-nums tabular-nums; font-feature-settings: "lnum", "tnum"; letter-spacing: 0; }
 .service-desc { font-size: 0.92rem; color: var(--muted); font-style: italic; }
 .menu-note { text-align: center; margin-top: 30px; font-size: 0.82rem; color: var(--muted); font-style: italic; }
 
@@ -270,7 +270,7 @@ footer { background: #050306; color: rgba(244,237,229,0.65); padding: 70px 0 30p
         <span class="service-desc">Specialty exfoliating soak.</span>
       </div>
     </div>
-    <p class="menu-note">✱ Prices shown are placeholders - confirm with owner before launch.</p>
+    <p class="menu-note">Prices subject to change</p>
   </div>
 </section>
 
